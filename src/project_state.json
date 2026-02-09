@@ -1,0 +1,180 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 11,
+  "summary": "Design and build a responsive website for Sanwariya Testing Lab LLP (electric cable, wire, and conductor testing lab) similar in style to robustsolutions.in, using HTML/CSS/JavaScript/PHP, including pages: Home, Services, Book a Test, and Contact Us, populated with provided business contact details.",
+  "architectural_notes": [
+    "Tech stack requested: HTML, CSS, JavaScript, and PHP (server-rendered or PHP-backed forms).",
+    "Site must be responsive for desktop and mobile.",
+    "Required pages: Home, Services, Book a Test, Contact Us.",
+    "Design reference/style inspiration: https://robustsolutions.in/",
+    "Logo asset source updated: use the client-provided logo file (not a newly generated logotype) for site branding across pages.",
+    "Email sending is not required/available; implement test report distribution via on-site PDF download only (no Gmail/email workflow)."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-responsive-multi-page-website-for-sanwariya-testing-lab-llp-electric-cable-wire-and-conductor-testing-lab-with-the-following-top-level-pages-routes-home-services-book-a-test-contact-us",
+      "title": "Create a responsive multi-page website for “Sanwariya Testing Lab LLP” (electric cable, wire, and conductor testing lab) with the following top-level pages/routes: Home, Services, Book a Test, Contact Us.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-match-the-overall-layout-and-interaction-style-to-the-reference-site-https-robustsolutions-in-similar-information-architecture-hero-sections-structure-modern-business-look-without-copying-any-brand-assets-use-english-for-all-visible-text",
+      "title": "Match the overall layout and interaction style to the reference site https://robustsolutions.in/ (similar information architecture, hero + sections structure, modern business look), without copying any brand assets; use English for all visible text.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-consistent-company-identity-and-contact-details-across-the-site-header-footer-and-contact-us-page-sanwariya-testing-lab-llp-ground-floor-plot-no-g1-548-riico-industrial-area-sitapura-jaipur-rajasthan-302022-gstin-08afqfs6982q1zk-email-sanwariyatestinglab-gmail-com-phones-8890074166-7737031940",
+      "title": "Add consistent company identity and contact details across the site (header/footer and Contact Us page): SANWARIYA TESTING LAB LLP; Ground Floor, Plot No.-G1-548, RIICO industrial area, Sitapura, Jaipur, Rajasthan –302022; GSTIN: 08AFQFS6982Q1ZK; Email: sanwariyatestinglab@gmail.com; Phones: 8890074166, 7737031940.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-services-page-with-clearly-structured-service-offerings-relevant-to-an-electric-cable-wire-conductor-testing-lab-grouped-sections-with-short-descriptions-plus-a-prominent-cta-to-book-a-test",
+      "title": "Implement the Services page with clearly structured service offerings relevant to an electric cable/wire/conductor testing lab (grouped sections with short descriptions), plus a prominent CTA to “Book a Test”.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-book-a-test-page-containing-a-form-to-submit-a-testing-request-at-minimum-customer-name-company-optional-phone-email-optional-test-item-type-cable-wire-conductor-other-standards-requirements-optional-message-details-and-preferred-date",
+      "title": "Build a “Book a Test” page containing a form to submit a testing request (at minimum: customer name, company (optional), phone, email (optional), test item type (cable/wire/conductor/other), standards/requirements (optional), message/details, and preferred date).",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-contact-us-page-containing-a-contact-form-name-phone-email-message-that-stores-submissions-in-the-backend-canister-and-show-a-clear-success-failure-message-after-submission",
+      "title": "Build a “Contact Us” page containing a contact form (name, phone, email, message) that stores submissions in the backend canister, and show a clear success/failure message after submission.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-frontend-integrate-the-forms-with-the-backend-using-react-query-mutations-queries-including-loading-states-error-handling-and-basic-spam-protection-ux-e-g-submit-button-disabled-while-pending",
+      "title": "Frontend: integrate the forms with the backend using React Query mutations/queries, including loading states, error handling, and basic spam protection UX (e.g., submit button disabled while pending).",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-choose-and-apply-one-coherent-visual-theme-colors-typography-spacing-section-styling-appropriate-for-an-industrial-testing-laboratory-brand-and-enforce-it-consistently-across-all-pages-do-not-use-a-blue-and-purple-palette",
+      "title": "Choose and apply one coherent visual theme (colors, typography, spacing, section styling) appropriate for an industrial testing laboratory brand, and enforce it consistently across all pages; do not use a blue-and-purple palette.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-generated-static-brand-visuals-as-local-assets-and-use-them-on-the-site-a-simple-logotype-and-a-wide-hero-banner-background-suitable-for-the-home-page",
+      "title": "Add generated static brand visuals as local assets and use them on the site: a simple logotype and a wide hero/banner background suitable for the Home page.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-support-for-using-the-user-s-provided-company-logo-instead-of-the-currently-hard-coded-generated-logo-and-use-it-consistently-in-the-site-header-and-footer",
+      "title": "Add support for using the user's provided company logo instead of the currently hard-coded generated logo, and use it consistently in the site header and footer.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-html-metadata-to-use-the-user-s-logo-as-the-site-favicon-and-related-icon-links-where-applicable",
+      "title": "Update the HTML metadata to use the user's logo as the site favicon (and related icon links where applicable).",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-home-page-hero-section-content-frontend-src-pages-home-tsx-to-display-the-following-information-prominently-matching-line-breaks-structure-as-separate-lines-or-stacked-text-welcome-to-sanwariya-testing-lab-llp-wires-cables-conductors-conduits-is-1so-iec-17025-2017-nabl-accredited-iso-9001-2015-certified-testing-laboratory-recognized-by-bureau-of-indian-standards-bis-keep-existing-hero-calls-to-action-e-g-book-a-test-view-services-and-the-current-overall-hero-layout-background-styling-intact-only-replacing-the-headline-subheadline-copy-as-needed",
+      "title": "Update the Home page hero section content (frontend/src/pages/Home.tsx) to display the following information prominently (matching line breaks/structure as separate lines or stacked text):\n- \"Welcome To SANWARIYA TESTING LAB LLP\"\n- \"Wires | Cables | Conductors | Conduits\"\n- \"IS/1SO/IEC 17025:2017 NABL Accredited\"\n- \"ISO 9001:2015 Certified Testing Laboratory\"\n- \"Recognized by: Bureau of Indian Standards (BIS).\"\nKeep existing hero calls-to-action (e.g., “Book a Test”, “View Services”) and the current overall hero layout/background styling intact, only replacing the headline/subheadline copy as needed.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-google-maps-link-https-maps-app-goo-gl-ketasmvuvdqntvuqa-to-the-website-and-surface-it-in-the-primary-contact-areas-contact-us-page-location-card-and-the-site-footer-contact-section-as-a-clear-external-link",
+      "title": "Add the Google Maps link https://maps.app.goo.gl/KETasMvUVDqNtvUQA to the website and surface it in the primary contact areas (Contact Us page location card and the site footer contact section) as a clear external link.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-centralize-the-google-maps-url-in-the-shared-company-info-module-so-it-can-be-reused-consistently-across-the-site",
+      "title": "Centralize the Google Maps URL in the shared company info module so it can be reused consistently across the site.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-client-side-pdf-download-feature-for-test-requests-no-email-sending-in-the-admin-page-at-route-internal-test-requests-frontend-src-pages-internal-testrequestslist-tsx-provide-a-per-row-action-to-download-a-pdf-file-that-contains-a-formatted-test-request-report-for-that-specific-request-using-the-existing-request-data-already-loaded-in-the-table",
+      "title": "Add a client-side PDF download feature for test requests (no email sending): in the admin page at route `/internal/test-requests` (`frontend/src/pages/internal/TestRequestsList.tsx`), provide a per-row action to download a PDF file that contains a formatted “Test Request Report” for that specific request, using the existing request data already loaded in the table.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create responsive website (desktop/mobile) for Sanwariya Testing Lab LLP similar to robustsolutions.in using HTML, CSS, JavaScript, and PHP with pages: Home, Services, Book a Test, Contact Us; include provided address, GSTIN, email, and phone numbers.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Backend: add Motoko types and stable storage for Book a Test submissions and Contact submissions, with create + list query methods (and basic pagination or limiting to prevent unbounded responses).",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Replace the generated/placeholder site logo with the user's provided company logo across the site (header/footer/favicon as applicable) and ensure sizing/contrast works responsively.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Update the Home page to display the provided headline/certification information: “Welcome To SANWARIYA TESTING LAB LLP”, “Wires | Cables | Conductors | Conduits”, “IS/ISO/IEC 17025:2017 NABL Accredited”, “ISO 9001:2015 Certified Testing Laboratory”, and “Recognized by: Bureau of Indian Standards (BIS).”",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Add a Google Maps link (https://maps.app.goo.gl/KETasMvUVDqNtvUQA) to the website (likely on Contact Us and/or footer) for Sanwariya Testing Lab LLP location.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Add a PDF download feature on the website for test reports (no email sending), allowing users to download the report in PDF format locally.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "projectName": "Sanwariya Testing Lab LLP",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

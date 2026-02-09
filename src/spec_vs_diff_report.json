@@ -1,0 +1,50 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-09T04:16:08.824Z",
+  "summary": "REQ-16 is only partially implemented. The diff adds a per-row “report” action that opens a printable HTML page (“Print / Save as PDF”) in a new window, but it does not clearly implement a true in-browser PDF file generation + deterministic `.pdf` download with `test-request-<id>.pdf` filename as required. Error handling via toast is present.",
+  "missing_requirements": [
+    {
+      "id": "REQ-16",
+      "requirement": "Clicking “Download PDF” downloads a `.pdf` file locally with deterministic filename including request ID (e.g., `test-request-<id>.pdf`).",
+      "reason": "The implementation described in the diff opens a new window and instructs the user to use the browser print dialog (“Print / Save as PDF”) rather than generating and triggering a direct `.pdf` download with a specified filename.",
+      "evidence": [
+        "frontend/src/pages/internal/TestRequestsList.tsx (toast: 'Report opened in new window. Use Print to save as PDF.')",
+        "frontend/src/utils/testRequestPdf.ts (adds a 'Print / Save as PDF' button and generates HTML for printing, not a PDF blob/download)"
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "requirement": "On `/internal/test-requests`, each test request row includes a clearly labeled action such as “Download PDF”.",
+      "reason": "The diff shows an added FileText icon and a download handler, but the provided snippet does not include the rendered button/label text; the file summary suggests “PDF report generation functionality” but does not confirm the exact label “Download PDF”.",
+      "evidence": [
+        "frontend/src/pages/internal/TestRequestsList.tsx (truncated before the Actions cell rendering)",
+        "frontend-file-summaries.txt (mentions 'PDF report generation functionality' but not the exact label)"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Opens a printable HTML report in a new window with a fixed 'Print / Save as PDF' button instead of directly generating and downloading a PDF file.",
+      "reason": "REQ-16 asks for a client-side PDF download that downloads a `.pdf` file locally with a deterministic filename. The diff indicates a print-to-PDF workflow via new window/HTML, which is a different delivery mechanism.",
+      "evidence": [
+        "frontend/src/utils/testRequestPdf.ts (HTML template + 'Print / Save as PDF' button + window.print)",
+        "frontend/src/pages/internal/TestRequestsList.tsx (success toast about opening a new window for printing)"
+      ]
+    },
+    {
+      "description": "Includes additional company fields in the report header (GSTIN, company email, company phone list).",
+      "reason": "REQ-16 only requires company name + full address from `companyInfo.ts` (and the specified request fields). Adding extra company metadata was not requested (though it may be harmless).",
+      "evidence": [
+        "frontend/src/utils/testRequestPdf.ts (renders Email, Phone, GSTIN from COMPANY_INFO)"
+      ]
+    }
+  ],
+  "confidence": 0.74,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/src/pages/internal/TestRequestsList.tsx",
+    "frontend/src/utils/testRequestPdf.ts",
+    "project_state.json"
+  ]
+}

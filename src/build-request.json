@@ -1,0 +1,41 @@
+{
+  "kind": "build_request",
+  "title": "Add PDF download for submitted test requests (no email)",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-16",
+      "text": "Add a client-side PDF download feature for test requests (no email sending): in the admin page at route `/internal/test-requests` (`frontend/src/pages/internal/TestRequestsList.tsx`), provide a per-row action to download a PDF file that contains a formatted “Test Request Report” for that specific request, using the existing request data already loaded in the table.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "add PDF download on the website (without email)."
+        ]
+      },
+      "acceptanceCriteria": [
+        "On `/internal/test-requests`, each test request row includes a clearly labeled action such as “Download PDF”.",
+        "Clicking “Download PDF” downloads a `.pdf` file locally (no email workflow, no external services).",
+        "The PDF includes: company name and full address (from `frontend/src/lib/companyInfo.ts`), a title like “Test Request Report”, and the request fields (Request ID, Customer Name, Company, Phone, Email if present, Test Item Type, Standards/Requirements if present, Message/Details if present, Preferred Date if present, Submitted Date).",
+        "The downloaded filename is deterministic and includes the request ID (e.g., `test-request-<id>.pdf`).",
+        "If PDF generation/download fails, show a user-visible English error message (e.g., toast/alert) and do not crash the page."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not implement any email sending or email-based delivery.",
+    "Do not add or require any external backend services; PDF generation/download must work entirely in the browser.",
+    "Keep Internet Identity / AdminGuard behavior unchanged; the PDF download must only be available within the existing admin page flow."
+  ],
+  "nonGoals": [
+    "Generating and emailing PDFs to Gmail or any email address.",
+    "Storing PDF files in the backend canister or adding PDF upload/attachment features.",
+    "Adding a public (non-admin) report download portal for customers."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-09T04:16:08.827Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 1,
+    "implemented": 1,
+    "items": [
+      {
+        "id": "REQ-16",
+        "summary": "Add a client-side PDF download feature for test requests (no email sending): in the admin page at route `/internal/test-requests` (`frontend/src/pages/internal/TestRequestsList.tsx`), provide a per-row action to download a PDF file that contains a formatted “Test Request Report” for that specific request, using the existing request data already loaded in the table.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/utils/testRequestPdf.ts",
+          "frontend/src/pages/internal/TestRequestsList.tsx",
+          "frontend/package.json"
+        ],
+        "matchedFiles": [
+          "frontend/src/utils/testRequestPdf.ts",
+          "frontend/src/pages/internal/TestRequestsList.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/pages/internal/TestRequestsList.tsx",
+    "frontend/src/utils/testRequestPdf.ts",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

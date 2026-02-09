@@ -1,0 +1,35 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Client-side PDF download for admin test requests",
+  "requirements": [
+    {
+      "id": "REQ-16",
+      "summary": "Add an in-browser per-row PDF download action on the internal test requests admin list that generates a formatted “Test Request Report” using already-loaded row data and company info.",
+      "acceptanceCriteria": [
+        "On `/internal/test-requests`, each test request row includes a clearly labeled action such as “Download PDF”.",
+        "Clicking “Download PDF” downloads a `.pdf` file locally (no email workflow, no external services).",
+        "The PDF includes: company name and full address (from `frontend/src/lib/companyInfo.ts`), a title like “Test Request Report”, and the request fields (Request ID, Customer Name, Company, Phone, Email if present, Test Item Type, Standards/Requirements if present, Message/Details if present, Preferred Date if present, Submitted Date).",
+        "The downloaded filename is deterministic and includes the request ID (e.g., `test-request-<id>.pdf`).",
+        "If PDF generation/download fails, show a user-visible English error message (e.g., toast/alert) and do not crash the page."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/utils/testRequestPdf.ts",
+          "operation": "create",
+          "description": "Implement a browser-only PDF generation helper that builds a “Test Request Report” PDF from a provided TestRequest row object plus company name/full address from `frontend/src/lib/companyInfo.ts`, and returns a Blob/Uint8Array suitable for triggering a local download with a deterministic filename (e.g., `test-request-<id>.pdf`). Use a client-side PDF library (e.g., pdf-lib or jspdf) and include robust error throwing to allow UI error handling. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/internal/TestRequestsList.tsx",
+          "operation": "modify",
+          "description": "Add a clearly labeled per-row action (e.g., “Download PDF”) alongside existing actions. On click, call the PDF helper with the existing `request` object already loaded in the table, then trigger a client-side download with filename `test-request-<id>.pdf`. If generation/download fails, show a user-visible English error (prefer existing toast system if available; otherwise use `alert`) and ensure the page does not crash."
+        },
+        {
+          "path": "frontend/package.json",
+          "operation": "modify",
+          "description": "Add/adjust frontend dependencies needed for in-browser PDF generation (and any minimal helper dependency used for download or date formatting within the PDF helper), ensuring there is no email workflow and no external service dependency. Verify the component's usage instructions before implementing."
+        }
+      ]
+    }
+  ]
+}

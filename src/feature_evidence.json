@@ -1,0 +1,25 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-add-a-client-side-pdf-download-feature-for-test-requests-no-email-sending-in-the-admin-page-at-route-internal-test-requests-frontend-src-pages-internal-testrequestslist-tsx-provide-a-per-row-action-to-download-a-pdf-file-that-contains-a-formatted-test-request-report-for-that-specific-request-using-the-existing-request-data-already-loaded-in-the-table",
+      "featureTitle": "Add a client-side PDF download feature for test requests (no email sending): in the admin page at route `/internal/test-requests` (`frontend/src/pages/internal/TestRequestsList.tsx`), provide a per-row action to download a PDF file that contains a formatted “Test Request Report” for that specific request, using the existing request data already loaded in the table.",
+      "files": [
+        "frontend/src/pages/internal/TestRequestsList.tsx",
+        "frontend/src/utils/testRequestPdf.ts"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-16"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
